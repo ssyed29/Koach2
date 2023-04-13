@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fighting Game Assistant</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div id="sidebar">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href= "?">Home</a></li>
+            <li><a href="?{{ url_for('frame_data')}}">Frame Data</a></li>
+            <li><a href="{{ url_for('video_analysis')}}">Video Analysis</a></li>
+            <li><a href="{{ url_for('matchup_guide')}}">Matchup Guide</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <h1>Fighting Game KOach Chat</h1>
+        <div id="chat-container">
+            <div id="chat-history"></div>
+            <div id="user-input-container">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    background-color: #AA00FF;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin: 0;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+#chat-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1em;
+}
+
+#user-input-container {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+#user-input {
+    flex: 1;
+    border: none;
+    padding: 1em;
+    outline: none;
+    font-size: 1.2em; /* Add this line */
+}
+
+#send-button {
+    background-color: #AA00FF;
+    color: white;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #AA00FF;
+}
+
+/* Add the following to the existing styles.css */
+
+#sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+#sidebar h3 {
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 0;
+}
+
+#sidebar a:hover {
+    background-color: #AA00FF;
+}
+
+#main {
+    margin-left: 250px;
+}
+
+.message {
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border-radius: 1em;
+    max-width: 60%;
+}
+
+.message.User {
+    background-color: #AA00FF;
+    color: white;
+    align-self: flex-end;
+    margin-right: 1em;
+    border-top-right-radius: 0;
+}
+
+.message.Assistant {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+    margin-left: 1em;
+    border-top-left-radius: 0;
+}
+
+/* Add the following styles */
+
+button {
+    background-color: #AA00FF;
+    border: none;
+    color: white;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0.2em 0;
+    cursor: pointer;
+    border-radius: 0.25em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #AA00FF;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    color: #333;
+    margin: 0.5em 0;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #333;
+    margin: 0.5em 0;
+}
+
+input[type="text"], input[type="number"], textarea, select {
+    font-size: 1.2em;
+    padding: 0.5em;
+    margin: 0.2em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input[type="submit"] {
+    font-size: 1.2em;
+    width: 100%;
+}
+
+
+
+
+.analysis-results {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .rounds-summary table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .rounds-summary th,
+  .rounds-summary td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .charts canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .suggestions ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .suggestions li {
+    margin-bottom: 10px;
+  }
+  
+

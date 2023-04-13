@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Data</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    
+</head>
+<body>
+    <div id="sidebar">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href= "{{ url_for('index')}}"">Home</a></li>
+            <li><a href="?">Frame Data</a></li>
+            <li><a href="{{ url_for('video_analysis')}}">Video Analysis</a></li>
+            <li><a href="{{ url_for('matchup_guide')}}">Matchup Guide</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <h1>Frame Data</h1>
+        <form id="character-form">
+            <label for="game">Game:</label>
+            <select id="game" name="game">
+                <!-- Add game options here -->
+                <option value="game1">Tekken 7</option>
+                <option value="game2">Street Fighter 6</option>
+                <option value="game2">Guilty Gear -Strive-</option>
+                <option value="game2">Ultimate Marvel vs. Capcom 3</option>
+                <option value="game2">DRAGON BALL FighterZ</option>
+                <option value="game2">THE KING OF FIGHTERS XV</option>
+                <option value="game2">MELTY BLOOD: TYPE LUMINA</option>
+                <option value="game2">Mortal Kombat 11 Ultimate</option>
+            </select>
+            <label for="character">Character:</label>
+            <select name="character" id="character">
+                <!-- Add character options here -->
+                <option value="character1">Character 1</option>
+                <option value="character2">Character 2</option>
+            </select>
+            <button type="submit">Get Frame Data</button>
+        </form>
+        <table id="frame-data-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Move</th>
+                    <th>Startup Frames</th>
+                    <th>Active Frames</th>
+                    <th>Recovery Frames</th>
+                    <th>Frame Advantage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Frame data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#character-form").on("submit", function(event) {
+            event.preventDefault();
+            const game = $("#game").val();
+            const character = $("#character").val();
+            $.ajax({
+                url: "/get_frame_data",
+                data: { character: character },
+                type: "POST",
+                success: function(response) {
+                    const frameData = JSON.parse(response);
+                    const tableBody = $("#frame-data-table tbody");
+                    tableBody.empty();
+
+                    for (const move in frameData) {
+                        const rowData = `<tr>
+                            <td>${move}</td>
+                            <td>${frameData[move].startup_frames}</td>
+                            <td>${frameData[move].active_frames}</td>
+                            <td>${frameData[move].recovery_frames}</td>
+                            <td>${frameData[move].frame_advantage}</td>
+                        </tr>`;
+                        tableBody.append(rowData);
+                    }
+                    $("#frame-data-table").show();
+                },
+                error: function() {
+                    alert("An error occurred while fetching frame data.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchup Guide</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div id="sidebar">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="frame_data.html">Frame Data</a></li>
+            <li><a href="video_analysis.html">Video Analysis</a></li>
+            <li><a href="?">Matchup Guide</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <h1>Matchup Guide</h1>
+        <form id="matchup-guide-form">
+            <label for="game">Game:</label>
+            <select id="game" name="game">
+                <!-- Add game options here -->
+                <option value="game1">Tekken 7</option>
+                <option value="game2">Street Fighter 6</option>
+                <option value="game2">Guilty Gear -Strive-</option>
+                <option value="game2">Ultimate Marvel vs. Capcom 3</option>
+                <option value="game2">DRAGON BALL FighterZ</option>
+                <option value="game2">THE KING OF FIGHTERS XV</option>
+                <option value="game2">MELTY BLOOD: TYPE LUMINA</option>
+                <option value="game2">Mortal Kombat 11 Ultimate</option>
+            </select>
+            <label for="character1">Character 1:</label>
+            <select id="character1" name="character1">
+                <!-- List of character options -->
+            </select>
+            <label for="character2">Character 2:</label>
+            <select id="character2" name="character2">
+                <!-- List of character options -->
+            </select>
+            <button type="submit">Generate Matchup Guide</button>
+        </form>
+        <div id="matchup-guide-results">
+            <!-- Display and functionality for the matchup guide here -->
+        </div>
+    </div>
+    <script src="matchup_guide_script.js"></script>
+</body>
+</html>

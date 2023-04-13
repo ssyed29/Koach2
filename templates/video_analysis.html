@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Analysis</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div id="sidebar">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="frame_data.html">Frame Data</a></li>
+            <li><a href="?">Video Analysis</a></li>
+            <li><a href="matchup_guide.html">Matchup Guide</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <h1>Video Analysis</h1>
+        <form id="video-analysis-form">
+            <label for="game">Game:</label>
+            <select id="game" name="game"> <!-- List of game options -->
+                <option value="game1">Tekken 7</option>
+                <option value="game2">Street Fighter 6</option>
+                <option value="game2">Guilty Gear -Strive-</option>
+                <option value="game2">Ultimate Marvel vs. Capcom 3</option>
+                <option value="game2">DRAGON BALL FighterZ</option>
+                <option value="game2">THE KING OF FIGHTERS XV</option>
+                <option value="game2">MELTY BLOOD: TYPE LUMINA</option>
+                <option value="game2">Mortal Kombat 11 Ultimate</option>
+            </select>
+            <label for="video-file">Upload a video file:</label>
+            <input type="file" id="video-file" name="video-file" accept="video/mp4,video/webm,video/ogg"><br>
+            <span>Accepted formats: MP4, WebM, Ogg</span><br>
+            <label for="video-url">Or enter a video URL:</label>
+            <input type="text" id="video-url" name="video-url" placeholder="https://www.example.com/video.mp4"><br>
+            <span>Accepted sources: YouTube, Twitch, Reddit, Direct video links (.mp4, .webm, .ogg)</span><br>
+            <button type="submit">Analyze Video</button>
+        </form>
+        <div id="video-analysis-results">
+        <!-- Display video analysis results here -->
+            <h2>Video Analysis Results</h2>
+
+            <div class="rounds-summary">
+            <h3>Round Summary</h3>
+            <table id="rounds-summary-table">
+                <thead>
+                    <tr>
+                      <th>Round</th>
+                      <th>Missed Moves</th>
+                      <th>Punishers Used</th>
+                      <th>Health Remaining</th>
+                      <th>Damage Dealt</th>
+                      <th>Successful Moves</th>
+                      <th>Combo Damage</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+            </table>
+            </div>
+        
+            <div class="charts">
+            <h3>Performance Charts</h3>
+            <canvas id="input-accuracy-chart"></canvas>
+            <canvas id="move-usage-chart"></canvas>
+            </div>
+        
+            <div class="suggestions">
+            <h3>Suggestions for Improvement</h3>
+            <ul id="suggestions-list"></ul>
+            </div>
+        </div>
+    </div>
+        <script src="video_analysis_script.js"></script>
+        
+        </body>
+        </html>
